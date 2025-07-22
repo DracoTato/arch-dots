@@ -1,0 +1,5 @@
+anchor=bottom-right
+max-visible=3
+border-radius=2
+outer-margin=0,5,10,0
+default-timeout=5000
