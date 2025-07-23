@@ -3,7 +3,7 @@
 * {
   font-family: FiraCode Nerd Font Propo;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: @foreground;
 }
 
@@ -17,6 +17,25 @@ window#waybar {
   padding: 8px 16px;
 }
 
+.module {
+  padding: 0px 14px;
+  background: alpha(@background, 0.7);
+  border: solid 2px alpha(@foreground, 0.2);
+  transition: all 0.3s;
+}
+
+.modules-left .module {
+  border-radius: 18px 6px;
+}
+
+.modules-center .module {
+  border-radius: 18px;
+}
+
+.modules-right .module {
+  border-radius: 6px 18px;
+}
+
 #workspaces button {
   padding: 5px 2px;
 }
@@ -26,77 +45,21 @@ window#waybar {
 }
 
 #workspaces button.empty label {
-  color: @color8;
+  color: alpha(@foreground, 0.4);
 }
 
 #workspaces button.active label {
-  color: @color5;
-  border-bottom: 1px solid @color5;
-}
-
-#workspaces button.urgent {
-  border-bottom: 1px solid @color5;
-}
-
-#workspaces,
-#idle_inhibitor,
-#tray,
-#clock,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#temperature,
-#backlight,
-#battery,
-#custom-power {
-  padding: 0px 12px;
-  border-radius: 6px;
-  background: alpha(@background, 0.9);
-  border: solid 1px alpha(@background, 0.2);
-  transition: all 0.3s;
-}
-
-#clock,
-#pulseaudio,
-#cpu,
-#memory,
-#temperature,
-#battery {
-  color: @background;
+  color: @color13;
+  border-bottom: 1px solid @color13;
 }
 
 #idle_inhibitor.activated {
-  background: alpha(@color4, 0.9);
-  color: @background;
-}
-
-#tray {
-  background: alpha(@color5, 0.9);
-}
-
-#clock {
-  background: alpha(@color10, 0.9);
-}
-
-#pulseaudio {
-  background: alpha(@color3, 0.9);
-}
-
-#battery {
-  background: alpha(@color6, 0.9);
+  border-color: alpha(@foreground, 0.9);
 }
 
 #memory,
 #temperature {
   margin-left: 8px;
-}
-
-#cpu,
-#memory,
-#temperature {
-  background: alpha(@color7, 0.9);
-  color: @background;
 }
 
 tooltip {

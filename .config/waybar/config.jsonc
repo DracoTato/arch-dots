@@ -2,7 +2,12 @@
   "spacing": 8,
   "reload_style_on_change": true,
 
-  "modules-left": ["hyprland/workspaces", "idle_inhibitor", "tray"],
+  "modules-left": [
+    "hyprland/workspaces",
+    "idle_inhibitor",
+    "tray",
+    "custom/updates",
+  ],
   "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
@@ -30,6 +35,17 @@
 
   "tray": {
     "spacing": 10,
+  },
+
+  // Stolen from elifouts on GitHub
+  "custom/updates": {
+    "format": "󰅢 {}",
+    "exec": "checkupdates | wc-l",
+    "exec-if": "exit 0",
+    "interval": 30,
+    "on-click": "kitty sh -c 'yay -Syu; echo Done — Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+    "signal": 8,
+    "tooltip": false,
   },
 
   "clock": {
