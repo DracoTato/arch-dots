@@ -1,0 +1,13 @@
+prompt = search
+allow_images=true
+hide_scroll=true
+
+insensitive=true
+
+term=kitty
+
+key_backward=Shift-K
+key_forward=Shift-J
+key_expand=Shift-L
+
+width=500
