@@ -1,4 +1,7 @@
 {
+  "name": "topbar",
+  "layer": "top",
+  "position": "top",
   "spacing": 8,
   "reload_style_on_change": true,
   "modules-left": [
@@ -7,9 +10,7 @@
     "tray",
     "custom/updates",
   ],
-  "modules-center": [
-    "clock"
-  ],
+  "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
     "network",
@@ -19,31 +20,18 @@
     "custom/power",
   ],
   "hyprland/workspaces": {
+    "workspace-taskbar": {
+      "enable": true,
+      "update-active-window": false, // not currently used
+      "format": "{icon}",
+      "icon-size": 16,
+      "on-click-window": "hyprctl dispatch focuswindow address:{address}",
+    },
     "persistent-workspaces": {
-      "*": [
-        1,
-        2
-      ],
+      "*": [1, 2],
     },
     "show-special": true,
     "format": "{icon} {windows}",
-    "window-rewrite-default": "",
-    "window-rewrite": {
-      "class<org.gnome.Nautilus>": "󰉓",
-      "class<kitty>": "",
-      "class<kitty> title<nvim.*>": "",
-      "class<zen>": "",
-      "class<thunderbird>": "",
-      "class<Spotify>": "",
-      "class<mpv>": "",
-      "class<discord>": "",
-      "class<Logseq>": "",
-      "class<krita>": "",
-      "class<libresprite>": "󰽉",
-      "class<blender>": "",
-      "class<.*kdenlive.*>": "",
-      "class<.*godot.*>": "",
-    },
   },
   "idle_inhibitor": {
     "format": "{icon}",
@@ -95,11 +83,7 @@
       "transition-to-left": true,
       "click-to-reveal": true,
     },
-    "modules": [
-      "cpu",
-      "memory",
-      "temperature"
-    ],
+    "modules": ["cpu", "memory", "temperature"],
   },
   "cpu": {
     "format": "{usage}% ",
@@ -111,27 +95,11 @@
   "temperature": {
     "critical-threshold": 80,
     "format": "{temperatureC}°C {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", ""],
   },
   "backlight": {
     "format": "{percent}% {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
+    "format-icons": ["", "", "", "", "", "", "", "", ""],
   },
   "battery": {
     "states": {
@@ -139,39 +107,13 @@
       "critical": 15,
     },
     "format": "{capacity}% {icon}",
-    "states": {
-      "warning": 30,
-      "critical": 15,
-    },
-    "format-full": "{capacity}% {icon}",
+    "format-full": "{capacity}% 󰁹",
     "format-warning": "{capacity}% 󱃍",
     "format-critical": "{capacity}% 󱃍",
     "format-alt": "{time} {icon}",
     "format-icons": {
-      "discharging": [
-        "󰁺",
-        "󰁻",
-        "󰁼",
-        "󰁽",
-        "󰁾",
-        "󰁿",
-        "󰂀",
-        "󰂁",
-        "󰂂",
-        "󰁹"
-      ],
-      "charging": [
-        "󰢜",
-        "󰂆",
-        "󰂇",
-        "󰂈",
-        "󰢝",
-        "󰂉",
-        "󰢞",
-        "󰂊",
-        "󰂋",
-        "󰂅"
-      ],
+      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
     },
   },
   "network": {
@@ -195,11 +137,7 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ],
+      "default": ["󰕿", "󰖀", "󰕾"],
     },
     "on-click": "pavucontrol",
   },
