@@ -26,3 +26,14 @@ post_command = $HOME/.config/hypr/scripts/post-wallpaper.sh $wallpaper
 ```
 
 To `.config/waypaper/config.ini`
+
+## Installation
+
+```bash
+git clone git@github.com:dracotato/arch-dots.git .dots
+cd .dots
+# with stow
+stow -v . -t=~
+# without stow...
+# use cp to copy each directory
+```
