@@ -1,7 +1,5 @@
 #!/bin/bash
 
-cache_path="$HOME/.cache/hypr-script-cache"
-
 hide-waybar() {
   killall -SIGUSR1 waybar
 }
@@ -14,19 +12,17 @@ set() {
   hide-waybar
 
   hyprctl keyword decoration:active_opacity 1
+  hyprctl keyword decoration:rounding 0
+  hyprctl keyword decoration:rounding_power 0
   hyprctl keyword decoration:inactive_opacity 1
   hyprctl keyword general:gaps_out 0
   hyprctl keyword general:gaps_in 0
-
-  echo "s" >"$cache_path"
 }
 
 reset() {
   show-waybar
 
   hyprctl reload
-
-  echo "r" >"$cache_path"
 }
 
 case "$1" in
@@ -37,17 +33,12 @@ r)
   reset
   ;;
 t)
-  # use set by default if the current state is unknown
-  if [ ! -f "$cache_path" ]; then
-    # no cache was found
-    set
+  # check if active_opacity is set to 1 (corresponds to set mode)
+  # this could lead to issues later on, but you take care of it ^^
+  if [[ -n $(hyprctl getoption decoration:active_opacity | grep -F "float: 1.0") ]]; then
+    reset
   else
-    # set was the last action
-    if [ $(grep -F "s" "$cache_path") ]; then
-      reset
-    else
-      set
-    fi
+    set
   fi
 
   ;;
