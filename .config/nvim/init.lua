@@ -1,2 +1,7 @@
--- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+require("dracotato.options")
+require("dracotato.lazy")
+require("dracotato.keybinds")
+require("dracotato.lsp")
+require("dracotato.autocmds")
+
+vim.cmd.colorscheme("catppuccin")
