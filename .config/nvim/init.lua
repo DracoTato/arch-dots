@@ -5,5 +5,3 @@ require("dracotato.lsp")
 require("dracotato.autocmds")
 
 vim.cmd.colorscheme("catppuccin")
-
--- TODO: fix formatting issues
