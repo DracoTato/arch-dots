@@ -8,15 +8,24 @@ vim.o.clipboard = "unnamedplus"
 
 vim.o.shiftwidth = 2
 vim.o.tabstop = 2
+vim.o.softtabstop = 2
 vim.o.expandtab = true
 
 vim.o.laststatus = 3
 
 vim.o.signcolumn = "yes"
 
+vim.o.completeopt = "menu,menuone,noselect"
+
+vim.o.virtualedit = "block"
+
 vim.o.cursorline = true
 
+vim.o.smoothscroll = true
+
 vim.o.showmode = false
+
+vim.o.breakindent = true
 
 vim.o.undofile = true
 
@@ -38,6 +47,8 @@ vim.o.inccommand = "split"
 vim.o.scrolloff = 10
 
 vim.o.confirm = true
+
+-- vim.opt.cmdheight = 0
 
 vim.diagnostic.config({
   severity_sort = true,
