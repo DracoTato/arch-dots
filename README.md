@@ -7,7 +7,7 @@
 - Window Manager: **hyprland**
 
 - Terminal: **kitty**
-- Bar: **waybar**
+- Bar: **quickshell**
 - Notification Daemon: **mako**
 - App Launcher: **wofi**
 - Screen Lock: **hyprlock**
