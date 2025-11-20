@@ -47,15 +47,16 @@ Scope {
             font.pointSize: 12
           }
 
-					BatteryWidget {
-						id: battery
+          BatteryWidget {
+            id: battery
 
-						Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+            Layout.rightMargin: 8
 
             color: textcolor
             font.weight: 500
             font.pointSize: 12
-					}
+          }
         }
       }
     }
